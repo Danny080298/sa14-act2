@@ -15,21 +15,21 @@ form {
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 .error-message {
     color: red;
     font-size: 0.8em;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    margin-bottom: 10px;
-    display: block;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    align-items: center;
-}
+
 
 label {
     display: block;
