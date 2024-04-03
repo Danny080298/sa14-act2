@@ -1,0 +1,13 @@
+#movable-div {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    position: relative;
+
+    top: 0;
+    left: 0;
+    transition: top 2s, left 2s;
+}
+.control-btn {
+    margin-top: 20px;
+}
