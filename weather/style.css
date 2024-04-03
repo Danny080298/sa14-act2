@@ -1,0 +1,28 @@
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 10;
+    padding: 10;
+    text-align: center;
+    background-color: antiquewhite;
+}
+
+#weather-app {
+    margin: 20px;
+}
+
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#current-weather, #forecast {
+    margin-top: 20px;
+    
+}
