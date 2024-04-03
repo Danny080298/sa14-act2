@@ -10,6 +10,7 @@ body, html {
     height: auto; 
     border-radius: 10px;
     box-shadow: 2px 2px 6px #999; 
+    
 }
 #weather-app {
     width: 80%;
