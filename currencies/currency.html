@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <h1>Currency Converter</h1>
+</head>
+<body>
+    <div id="converter-container">
+        <form id="converter-form">
+            <select id="source-currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="VND">VND</option>
+            </select>
+            <select id="target-currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="VND">VND</option>
+            </select>
+            <input type="number" id="amount" placeholder="Enter amount">
+            <button type="submit">Convert</button>
+        </form>
+        <div id="result-container">
+            <p>Converted Amount: <span id="converted-amount"></span></p>
+            <p>Exchange Rate: <span id="exchange-rate"></span></p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
