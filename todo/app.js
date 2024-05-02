@@ -16,9 +16,15 @@ function addTask() {
         <button class="delete-btn">Delete</button>
     `;
     taskList.appendChild(li);
+
     li.querySelector('.edit-btn').addEventListener('click', function() {
-        editTask(this.parentElement);
+        if (this.innerText === "Edit") {
+            editTask(this.parentElement);
+        } else {
+            saveTask(this.parentElement);
+        }
     });
+
     li.querySelector('.delete-btn').addEventListener('click', function() {
         deleteTask(this.parentElement);
     });
@@ -26,35 +32,31 @@ function addTask() {
     document.getElementById('task-title').value = '';
     document.getElementById('task-details').value = '';
 }
+
 function editTask(taskItem) {
-    
     const titleSpan = taskItem.querySelector('.task-title');
     const detailsSpan = taskItem.querySelector('.task-details');
-    
+
     const currentTitle = titleSpan.innerText;
     const currentDetails = detailsSpan.innerText;
 
-    
     const titleInput = document.createElement('input');
     titleInput.type = 'text';
     titleInput.value = currentTitle;
-    titleInput.className = 'edit-title';
-
     const detailsInput = document.createElement('textarea');
     detailsInput.value = currentDetails;
-    detailsInput.className = 'edit-details';
 
-  
     taskItem.replaceChild(titleInput, titleSpan);
     taskItem.replaceChild(detailsInput, detailsSpan);
 
-    const saveChanges = () => saveTask(taskItem, titleInput, detailsInput);
     const editButton = taskItem.querySelector('.edit-btn');
     editButton.innerText = 'Save';
-    editButton.onclick = saveChanges; 
-    
 }
-function saveTask(taskItem, titleInput, detailsInput) {
+
+function saveTask(taskItem) {
+    const titleInput = taskItem.querySelector('input');
+    const detailsInput = taskItem.querySelector('textarea');
+
     const newTitle = titleInput.value;
     const newDetails = detailsInput.value;
 
@@ -69,22 +71,10 @@ function saveTask(taskItem, titleInput, detailsInput) {
     taskItem.replaceChild(titleSpan, titleInput);
     taskItem.replaceChild(detailsSpan, detailsInput);
 
-    const saveButton = taskItem.querySelector('.edit-btn');
-    saveButton.innerText = 'Edit';
-    saveButton.removeEventListener('click', function() {
-        saveTask(taskItem, titleInput, detailsInput);
-    });
-    saveButton.addEventListener('click', function() {
-        editTask(taskItem);
-    });
     const editButton = taskItem.querySelector('.edit-btn');
     editButton.innerText = 'Edit';
-    editButton.onclick = () => editTask(taskItem);
 }
-
-
 
 function deleteTask(taskItem) {
     taskItem.remove();
 }
-
